@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.12.21)  19 JAN 2025 23:29
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.12.21)  20 JAN 2025 00:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1142,9 +1142,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
+Underfull \vbox (badness 5133) has occurred while \output is active []
+
+ [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]) (./sections/figures_isoloated.tex
+) (./sections/figures_isoloated.tex
 File: ./figures/drive/incendio.png Graphic file (type bmp)
 <./figures/drive/incendio.png>
 File: ./figures/drive/incendio_2.png Graphic file (type bmp)
@@ -1177,33 +1180,22 @@ Underfull \vbox (badness 8038) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6] [7]
+ [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) (./sections/conclusiones.tex [8])
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+) [8] (./sections/conclusiones.tex) [9]
 LaTeX Font Info:    Trying to load font information for T1+txtt on input line 77.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
-) [9] [10]
+) [10] [11]
 
 Package caption Warning: Unused \captionsetup[table] on input line 20.
 See the caption package documentation for explanation.
 
-[leftcolumn badness]: 1000000 on 63.62pt
-[rightcolumn badness]: 1000000 on 63.62pt
-- LAST -
-Extra skip:16.38pt
-Left:206.0pt/1.79pt
-Right:190.0pt/1.40999pt
-Split: 202.0pt
-Output:202.0pt
-Pageshrink: 0.0pt
-Pagestretch: 0.0pt
-@colht:643.20255pt
-FLUSHEND [output]: 202.0pt
-FLUSHEND [leftcolumn badness]: 100
-FUSHEND [rightcolumn badness]: 800
-[11] (./main.aux
+(./main.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.

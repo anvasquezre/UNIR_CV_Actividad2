@@ -63,14 +63,11 @@ Inicialmente,
 
    \item La imagen del parqueadero se transforma a escala de grises mediante para simplificar el procesamiento posterior.
     
-    \item Se aplican dos operaciones morfológicas secuenciales: Apertura morfológica para eliminar pequeños objetos y suavizar contornos. Cierre morfológico  para cerrar pequeños huecos y conectar objetos cercanos.
-    Estas operaciones ayudan a resaltar las formas de los vehículos y reducir el ruido.
-    
     \item Se aplica un filtro gaussiano para reducir aún más el ruido y suavizar la imagen, preparándola para la detección de bordes.
     
     \item Se utiliza el algoritmo de Canny para detectar los bordes en la imagen, lo que ayuda a identificar los contornos de los vehículos.
     
-    \item Se aplica un algoritmo de selección de contornos para identificar y extraer los contornos de los objetos en la imagen de bordes.
+    \item Se aplican dos operaciones morfológicas secuenciales con un kernel rectangular: Apertura morfológica para eliminar pequeños objetos que no estén asociados a figuras rectangulares. Cierre morfológico  para cerrar pequeños huecos y conectar bordes que hayan sido removidos por la operación de apertura. Estas operaciones ayudan a resaltar las formas de los vehículos y reducir el ruido.
     
     \item Finalmente, los contornos detectados se dibujan sobre la imagen original, resaltando las áreas identificadas como vehículos.
     
@@ -87,7 +84,7 @@ Inicialmente,
 
     \item Se aplica una operación de dilatación morfológica utilizando un elemento estructural rectangular. Este paso ayuda a reforzar y conectar los bordes detectados, especialmente útil para delinear estructuras lineales como las orillas del puerto.
     
-    \item Se implementa un filtro a nivel de codigo que elimina objetos pequeños basándose en su área. Este paso encuentra segmentos completos y estima su area para remover elementos no deseados como barcos pequeños o ruido que no forman parte de la estructura de la orilla o se aplica una operación de apertura morfológica (erosión seguida de dilatación) utilizando un elemento estructural rectangular. Se espera que esta transformación sea particularmente efectiva para eliminar objetos alargados como barcos, mientras preserva las estructuras más grandes y lineales de las orillas.
+    \item Se implementa un filtro a nivel de código que elimina objetos pequeños basándose en su área. Este paso encuentra segmentos completos y estima su área para remover elementos no deseados como barcos pequeños o ruido que no forman parte de la estructura de la orilla o se aplica una operación de apertura morfológica (erosión seguida de dilatación) utilizando un elemento estructural rectangular. Se espera que esta transformación sea particularmente efectiva para eliminar objetos alargados como barcos, mientras preserva las estructuras más grandes y lineales de las orillas.
     
     \end{seriate}
 

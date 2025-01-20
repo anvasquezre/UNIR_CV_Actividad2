@@ -17,8 +17,7 @@ Se evidencia claramente como la aplicación del operador de Sobel en ambas direc
 
 \paragraph{Detección de Automóviles en parqueadero} Los resultados de aplicar las transformaciones a la detección de automóviles en un parqueadero se visualizan en la Figura \ref{fig:parqueadero_results}.
 
-
-Se observa claramente como la aplicación de operadores morfológicos y espaciales permite aislar los automóviles en el parqueadero y remover ruido como algunos árboles, sombras y las líneas de parqueo. No obstante, al realizar la detección de bordes con Canny y encontrar los contornos, se siguen observando bordes no pertenecientes a automóviles. Esto podría mejorarse mediante la aplicación de un filtro que tome únicamente los contornos con aproximaciones a un cuadrado.\\
+En primera instancia, se resalta la importancia del filtro gaussiano para la eliminación de ruido. Consecuentemente, se observa claramente como la aplicación de operadores morfológicos de tipo rectangular con las operaciones de apertura y cierre permiten remover, objetos de forma no asociada a la forma de interés (como lo son los carros en este caso). No obstante, al realizar  y encontrar los contornos, se siguen observando bordes no pertenecientes a automóviles. Sin embargo, esta metodología puede ser utilizada como una forma rápida de detección de automóviles en imágenes satelitales\\
 
 \paragraph{Detección de orillas en puertos} Los resultados de aplicar las transformaciones a la detección de orillas en puertos se visualizan en la Figura \ref{fig:puerto_results}.
 
