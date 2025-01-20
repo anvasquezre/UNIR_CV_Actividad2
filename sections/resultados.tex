@@ -1,0 +1,56 @@
+% LTeX: language=es
+\paragraph{Detección de Incendios Forestales} Los resultados de aplicar las transformaciones a la detección de incendios forestales se visualizan en la Figura \ref{fig:incendio_results}.
+
+Cabe resaltar la importancia del incremento de contraste para resaltar los detalles del humo y del fuego, lo que facilita la detección de los contornos. La aplicación de operaciones morfológicas adicionales, como la dilatación y la eliminación de contornos secundarios, contribuye a mejorar la calidad de la detección y a reducir el ruido en la imagen procesada y posterior detección de la ubicación del incendio.
+
+La fusión de la imagen original con el contorno dilatado proporciona una representación visual intuitiva del objeto de interés, lo que facilita la interpretación de los resultados. \\
+
+\paragraph{Detección de Retinopatía Diabética} Los resultados de aplicar las transformaciones a la detección de retinopatía diabética se visualizan en la Figura \ref{fig:retinopatia_results}.
+
+El método propuesto logra resaltar eficazmente las áreas de potencial daño vascular asociadas a la retinopatía diabética. La detección de bordes y el procesamiento morfológico permiten identificar regiones sospechosas, mientras que la ecualización del histograma mejora significativamente el contraste y la visibilidad de los detalles vasculares. Es importante recalcar como la aplicación de la operación
+de apertura permite filtrar el ruido y centrar la atención en las áreas de interés de geometría similar al kernel utilizado.\\
+
+\paragraph{Inspección de Calidad en Frutas} Los resultados de aplicar las transformaciones a la inspección de calidad en frutas se visualizan en la Figura \ref{fig:frutas_results}.
+
+
+Se evidencia claramente como la aplicación del operador de Sobel en ambas direcciones permite resaltar los bordes de las frutas, lo que facilita la detección de defectos. No obstante, es un caso particular para el tomate pues es una fruta lisa. Este metodo podría no funcionar con frutas con presencia natural de imperfecciones, para lo cual se debería utilizar otro acercamiento.\\
+
+\paragraph{Detección de Automóviles en parqueadero} Los resultados de aplicar las transformaciones a la detección de automóviles en un parqueadero se visualizan en la Figura \ref{fig:parqueadero_results}.
+
+
+Se observa claramente como la aplicación de operadores morfológicos y espaciales permite aislar los automóviles en el parqueadero y remover ruido como algunos árboles, sombras y las líneas de parqueo. No obstante, al realizar la detección de bordes con Canny y encontrar los contornos, se siguen observando bordes no pertenecientes a automóviles. Esto podría mejorarse mediante la aplicación de un filtro que tome únicamente los contornos con aproximaciones a un cuadrado.\\
+
+\paragraph{Detección de orillas en puertos} Los resultados de aplicar las transformaciones a la detección de orillas en puertos se visualizan en la Figura \ref{fig:puerto_results}.
+
+Se observa que las imágenes poseen una gran diferencia desentendiendo de la tonalidad de grises con las que son binarizadas. En este caso, se observa como al utilizar un mayor umbral para la binarización (bordes 2), se logra tener una definición mucho mayor de los bordes al aplicar el operador de Sobel. A su vez, se observa también las diferencias entre ambos métodos utilizados de eliminación de barcos. En este caso, es mucho más eficiente el método por áreas ante el método de apertura, en donde la imagen pierde su forma y su interpretación es pobre en comparación a la imagen en donde se filtran los barcos por áreas.
+
+Esto se debe a la propia contextualización de la imagen, donde la superficie no es un elemento continuo al ser escala de grises. Está representado por una multiplicidad de objetos menores. En el caso del método de apertura, está aplicada de forma homogénea a toda la imagen. Sin embargo, el método de reconocimiento de áreas busca una superficie adecuada al valor seleccionado, permitiendo así que los barcos (rodeados de agua y claramente delineados) posean una superficie menor a lo pautado y, consecuentemente, sean removidos.\\
+
+\paragraph{Detección de Tumores Cerebrales} Los resultados de aplicar las transformaciones a la detección de tumores cerebrales se visualizan en la Figura \ref{fig:tumor_results}.
+
+Se observa la particularización del tumor con respecto a la imagen original, así como la limpieza de ruido como resultado de los operadores morfológicos y espaciales. Se observa como la operación de apertura tiene el efecto de eliminar pequeños objetos o protuberancias que podrían haber sido introducidos por la dilatación inicial, suavizar los contornos del tumor, eliminando irregularidades menores.
+
+\paragraph{Detección de defectos en pantallas de celulares} Los resultados de aplicar las transformaciones a la detección de defectos en pantallas de celulares se visualizan en la Figura \ref{fig:celular_results}.
+
+A partir de la imagen original, se genera la conversión de la imagen a blanco y negro. Luego, por medio de la erosión, se intenta la eliminación de las marcas. Se observa que la eliminación no es total, pero si reducida en un buen porcentaje. Esto se genera para poder implementar el proceso de Top-hat, como lo marca la imagen final. Gracias a esto, se permite resaltar las diferencias y poder vislumbrar las marcas con mayor rigor. El proceso, en este caso, incluye la eliminación de la marca en conjunto con la diferencia entre imágenes para poder realizar de forma genérica la visualización de las marcas propias de todos los posibles celulares.
+
+Es importante recalcar que como los bordes del celular también poseen la misma forma de línea que las marcas, son objeto de remoción al aplicar la erosión, por lo cual la imagen final muestra que los bordes del celular son altamente visibles, entendiendo así que no es el mejor método para esta aplicación, o se requiera de métodos adicionales de recorte o aislamiento anteriores a la aplicación de las transformaciones.
+
+
+\paragraph{Detección de Zonas Urbanas en Imágenes NIR-R-B}
+
+Los resultados del análisis de la imagen satelital NIR-RB para la detección de la huella urbana de Palmira se muestran en la Figura  \ref{fig:palmira_results}. Se evidencia una segmentación efectiva de las áreas urbanizadas. El proceso de composición de falso color infrarrojo, utilizando las bandas NIR, roja y azul, resaltó claramente la diferencia entre las zonas urbanas y la vegetación circundante. La aplicación del índice NDVI fue crucial para distinguir entre áreas con vegetación y potenciales zonas urbanas, proporcionando una base sólida para la segmentación inicial.
+
+El análisis de textura, basado en la desviación estándar local de la banda roja, demostró ser particularmente efectivo para diferenciar entre áreas urbanas y suelos desnudos o campos cosechados, que inicialmente podrían confundirse con zonas urbanizadas. La combinación de las máscaras NDVI y de textura, seguida de un filtrado por conectividad, resultó en una delimitación precisa de la huella urbana, incluyendo tanto el núcleo urbano principal como asentamientos más pequeños en las áreas periféricas.
+
+La visualización final, que superpone los bordes detectados sobre la imagen original, muestra una clara demarcación de las áreas urbanizadas. Se observa una buena correspondencia con la estructura urbana visible en la imagen de color natural, validando la efectividad del método. Notablemente, el algoritmo logró detectar no solo el área urbana principal de Palmira, sino también pequeños asentamientos y estructuras dispersas en las zonas rurales circundantes, demostrando su sensibilidad a diferentes escalas de urbanización.
+
+Sin embargo, se notaron algunas limitaciones, como la inclusión de algunas áreas de cultivo seco que fueron detectadas erróneamente como zonas urbanas debido a su alta textura. A pesar de esto, el método demostró ser robusto en su capacidad para distinguir la mayoría de las áreas urbanizadas de su entorno rural, proporcionando una herramienta valiosa para el análisis urbano y la planificación territorial en la región de Palmira.
+
+
+
+\paragraph{Detección de Melanoma}
+
+Los resultados de la segmentación del melanoma se muestran en la Figura \ref{fig:melanoma_results}. Se logra una identificación precisa y efectiva de la lesión en la imagen dermatológica. El proceso de eliminación del vello mediante Black-hat e inpainting proporcionó una base limpia para el análisis. 
+
+La segmentación inicial utilizando el canal de luminosidad del espacio HSV, seguida de refinamientos morfológicos, produjo una máscara bien definida del melanoma. La imagen final muestra una superposición precisa de la segmentación sobre la lesión original, capturando con fidelidad la forma irregular del melanoma, sus bordes bien definidos y las variaciones de color y textura internas. La exclusión efectiva de la piel sana circundante y la preservación de detalles importantes de la lesión demuestran la robustez del método.

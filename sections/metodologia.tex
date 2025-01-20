@@ -1,0 +1,167 @@
+%LTeX: language=es
+\subsection{Entorno de desarrollo}
+Para la implementación de los operadores morfológicos y espaciales, se ha utilizado el lenguaje de programación Python en su versión 3.12.X, junto con las bibliotecas NumPy \autocite{harris2020array}, OpenCV \autocite{opencv_library} y Scikit-image \autocite{van2014scikit}. Estas ofrecen una amplia gama de funciones y métodos para la manipulación de matrices y la aplicación de operadores morfológicos y espaciales.
+
+\subsection{Casos de estudio}
+
+\paragraph{Detección de Incendios Forestales} La detección temprana de incendios forestales es crucial para minimizar los daños ambientales y económicos.  El objetivo del presente caso es poder detectar en la imagen, señales de humo que indiquen un incendio eminente. La Figura \ref{fig:a} muestra la imagen original utilizada en este caso de estudio \autocite{WildfireDetectionImage}.
+
+El proceso de análisis de imagen propuesto comprende una secuencia de operaciones que incluyen: 
+\begin{seriate}
+
+\item un realce de contraste mediante multiplicación. 
+
+\item Posteriormente, se efectúa una conversión a escala de grises para facilitar las transformaciones matemáticas subsiguientes.
+
+\item Se aplican operaciones morfológicas para la reducción de ruido, seguidas de una dilatación para acentuar los contornos.
+
+\item El proceso continúa con la eliminación de contornos secundarios, preservando únicamente el contorno principal.
+
+\item Finalmente, se extrae el contorno dilatado y se fusiona con la imagen original para obtener la representación final del objeto de interés. 
+\end{seriate}
+
+\paragraph{Detección de Retinopatía Diabética} La retinopatía diabética es una complicación de la diabetes que afecta los vasos sanguíneos de la retina. La detección temprana de esta enfermedad es fundamental para prevenir la pérdida de visión. En este caso de estudio, se busca identificar la presencia de microaneurismas en la retina, que son un indicador temprano de retinopatía diabética. La Figura \ref{fig:b} muestra la imagen original utilizada en este caso de estudio \autocite{DiabeticRetinopathyResized}.
+
+Inicialmente, 
+\begin{seriate}
+    
+    \item se convierte a escala de grises para facilitar las operaciones matemáticas subsiguientes. 
+    
+    \item Se aplica una ecualización de histograma para mejorar el contraste, redistribuyendo uniformemente las intensidades de los píxeles y realzando los detalles, especialmente en áreas oscuras o de bajo contraste. 
+    
+    \item A continuación, se realiza una segmentación utilizando el algoritmo Canny para detección de bordes. 
+    
+    \item Se implementa una operación morfológica de apertura con un kernel tipo elipse de \( 5x5 \) para reducir el ruido en la imagen resultante y centrarse en las zonas de potencial daño vascular. 
+    
+    \item Finalmente, se fusiona la imagen procesada, convertida de nuevo a formato RGB, con la imagen original, aplicando una tonalidad de 3/7 para resaltar las áreas de interés.
+\end{seriate}
+
+
+
+\paragraph{Inspección de Calidad en Frutas} La inspección de calidad en frutas es un proceso crucial en la industria alimentaria para garantizar la seguridad y la calidad de los productos. En este caso de estudio, se busca identificar frutas podridas en una imagen de inspección de calidad. La Figura \ref{fig:c} muestra la imagen original utilizada en este caso de estudio \autocite{FruitVegetableDisease}.
+
+\begin{seriate}
+
+    
+    \item Se parte de una conversión a escala de grises para simplificar el procesamiento y reducir la complejidad computacional, ya que la información de color no es esencial para la detección de anomalías estructurales.
+    
+    \item Se ajustan los valores de intensidad de los píxeles a un rango estándar, típicamente \( [0, 1] \). Esta operación mejora la consistencia entre diferentes imágenes y facilita el procesamiento posterior al establecer una escala uniforme.
+    
+    \item Se aplica un operador de gradiente (como Sobel o Prewitt) en la dirección horizontal. Este paso resalta los cambios abruptos de intensidad en el eje x, que pueden indicar bordes o anomalías en la superficie de la fruta.
+    
+    \item Similar al paso anterior, pero en la dirección vertical. La combinación de los gradientes \( x \) e \( y \) proporciona una representación completa de los cambios de intensidad en la imagen, crucial para detectar irregularidades en la textura de la fruta.
+    
+    \item Se binariza la imagen para resaltar las áreas de mayor cambio en intensidad, es decir, los bordes y las regiones con texturas anómalas.
+    
+    \item Finalmente, Fusión con la imagen original: La imagen procesada se combina con la original, permitiendo una visualización intuitiva de las áreas problemáticas en el contexto de la fruta completa.
+    
+    \end{seriate}
+
+\paragraph{Detección de Automóviles en parqueadero} La detección de vehículos en estacionamientos es una tarea común en aplicaciones de monitoreo de tráfico y seguridad. En este caso de estudio, se busca identificar los vehículos en un estacionamiento a partir de una imagen aérea. La Figura \ref{fig:d} muestra la imagen original utilizada en este caso de estudio \autocite{pklot-raw_dataset}.
+
+\begin{seriate}
+
+   \item La imagen del parqueadero se transforma a escala de grises mediante para simplificar el procesamiento posterior.
+    
+    \item Se aplican dos operaciones morfológicas secuenciales: Apertura morfológica para eliminar pequeños objetos y suavizar contornos. Cierre morfológico  para cerrar pequeños huecos y conectar objetos cercanos.
+    Estas operaciones ayudan a resaltar las formas de los vehículos y reducir el ruido.
+    
+    \item Se aplica un filtro gaussiano para reducir aún más el ruido y suavizar la imagen, preparándola para la detección de bordes.
+    
+    \item Se utiliza el algoritmo de Canny para detectar los bordes en la imagen, lo que ayuda a identificar los contornos de los vehículos.
+    
+    \item Se aplica un algoritmo de selección de contornos para identificar y extraer los contornos de los objetos en la imagen de bordes.
+    
+    \item Finalmente, los contornos detectados se dibujan sobre la imagen original, resaltando las áreas identificadas como vehículos.
+    
+    \end{seriate}
+
+\paragraph{Detección de orillas en puertos} La detección de orillas en puertos es una tarea fundamental en aplicaciones de monitoreo marítimo y seguridad. En este caso de estudio, se busca identificar las orillas en una imagen satelital de un puerto. La Figura \ref{fig:e} muestra la imagen original utilizada en este caso de estudio \autocite{ShipsSatelliteImagery}.
+
+
+\begin{seriate}
+
+    \item La imagen satelital a color se convierte a escala de grises. 
+    
+    \item Se utiliza un operador tipo Sobel para identificar los contornos en la imagen y se binariza con dos diferentes umbrales pararesaltar los bordes.
+
+    \item Se aplica una operación de dilatación morfológica utilizando un elemento estructural rectangular. Este paso ayuda a reforzar y conectar los bordes detectados, especialmente útil para delinear estructuras lineales como las orillas del puerto.
+    
+    \item Se implementa un filtro a nivel de codigo que elimina objetos pequeños basándose en su área. Este paso encuentra segmentos completos y estima su area para remover elementos no deseados como barcos pequeños o ruido que no forman parte de la estructura de la orilla o se aplica una operación de apertura morfológica (erosión seguida de dilatación) utilizando un elemento estructural rectangular. Se espera que esta transformación sea particularmente efectiva para eliminar objetos alargados como barcos, mientras preserva las estructuras más grandes y lineales de las orillas.
+    
+    \end{seriate}
+
+\paragraph{Detección de Tumores Cerebrales} La detección temprana de tumores cerebrales es crucial para el tratamiento y la supervivencia de los pacientes. En este caso de estudio, se busca identificar tumores cerebrales en una imagen de resonancia magnética (MRI). La Figura \ref{fig:f} muestra la imagen original utilizada en este caso de estudio \autocite{BrainMRIImages}.
+
+\begin{seriate}
+\item Se convierte la imagen a escala de grises (Aunque la imagen original ya está en escala de grises, este paso es necesario para garantizar el canal correcto para las operaciones morfológicas y espaciales subsiguientes) y se normaliza a un rango de intensidad estándar \( [0, 1] \).
+
+\item Se binariza la imagen con un umbral fijo de \( 0.65 \)
+
+\item Se aplica una operación de dilatación morfológica utilizando un elemento estructural en forma de disco. Esta elección es crucial debido a la naturaleza generalmente redondeada de los tumores. La dilatación expande las regiones del tumor, lo que ayuda a resaltar la forma general del tumor, conectar áreas del tumor que podrían estar ligeramente separadas en la imagen original, aumentar el tamaño aparente del tumor para facilitar su identificación.
+
+\item Después de la dilatación, se aplica una operación de apertura morfológica. Esta operación consiste en una erosión seguida de una dilatación, y tiene el efecto de eliminar pequeños objetos o protuberancias que podrían haber sido introducidos por la dilatación inicial,suavizar los contornos del tumor, eliminando irregularidades menores, preservar la forma general del tumor mientras se eliminan detalles finos que podrían ser ruido o artefactos.
+
+\end{seriate}
+
+\paragraph{Detección de defectos en pantallas de celulares} La detección de defectos en pantallas de celulares es una tarea común en la industria de la electrónica para garantizar la calidad de los productos. . La Figura \ref{fig:g} muestra la imagen original utilizada en este caso de estudio \autocite{MobilePhoneDefect}.
+
+\begin{seriate}
+
+    \item La imagen se convierte a escala de grises y se aplica una binarización simple con un valor de umbral de 0.2. Este paso convierte la imagen en blanco y negro, separando los objetos de interés (posiblemente ralladuras) del fondo.
+    
+    \item Se aplica una operación de erosión utilizando un elemento estructurante en forma de disco con radio 3. Con esta transformación se busca eliminar los posibles desperfectos para posteriormente ser resaltados con una operación Top-hat.
+    
+    \item La imagen erosionada se redimensiona para que coincida con las dimensiones de la imagen binaria original. Esto asegura que las operaciones subsiguientes se realicen en imágenes del mismo tamaño.
+    
+    \item Se realiza una operación Top-hat mediante una XOR bit a bit entre la imagen binaria original y la imagen erosionada redimensionada. Esta operación es particularmente útil para detectar elementos brillantes en un fondo oscuro o, en este caso, para resaltar las ralladuras.
+    
+\end{seriate}
+
+\paragraph{Detección de Zonas Urbanas en Imágenes NIR-R-B}
+
+El archivo es una imagen satelital de Sentinel 2 de la ciudad de Palmira, Valle del Cauca - Colombia, (Figura \ref{fig:h}).
+A pesar de que este tipo de composición se utiliza para evaluar la salud en las plantas, podemos aprovechar el hecho de que en esta imagen se diferencia bastante bien entre las construcciones de la ciudad, terrenos baldíos y vegetación. Por lo que lo se usará para determinar la huella urbana de la ciudad de Palmira, incluyendo las construcciones de pequeños poblados a las afueras de la ciudad.
+
+\begin{seriate}
+
+
+    \item Se crea una composición usando las bandas NIR, roja y azul. Esta composición resalta la vegetación y ayuda a diferenciar áreas urbanas de vegetación.
+    
+    \item Cálculo del NDVI (Índice de Vegetación de Diferencia Normalizada. Se calcula para distinguir entre áreas con vegetación y áreas potencialmente urbanizadas. El NDVI es alto para vegetación y bajo para áreas construidas o suelo desnudo.
+    
+    \item Se crea una máscara binaria basada en el NDVI para una primera aproximación de áreas posiblemente urbanizadas.
+    
+    \item Se aplica un filtro morfológico de clausura para conectar estructuras urbanas contiguas y suavizar los bordes de la máscara.
+    
+    \item Se calcula la desviación estándar local en la banda roja para identificar áreas con alta heterogeneidad, característico de zonas urbanas.
+    
+    \item Se combina la máscara NDVI con la máscara de textura para refinar la detección de áreas urbanas.
+    
+    \item Se eliminan pequeños grupos de píxeles aislados mientras se preservan asentamientos pequeños mediante un filtrado por conectividad:.
+    
+    \item Se utiliza el gradiente morfológico para delinear los bordes de las áreas urbanas detectadas.
+    
+    \item Finalmente, se visualiza el resultado final superponiendo los bordes detectados sobre la imagen original.
+    
+    \end{seriate}
+
+
+
+\paragraph{Detección de Melanoma} El melanoma es un tipo de cáncer de piel que puede ser mortal si no se detecta y trata a tiempo. En este caso de estudio, se busca identificar un melanoma en una imagen de piel. La Figura \ref{fig:i} muestra la imagen original utilizada en este caso de estudio \autocite{ISICInternationalSkin}.
+
+\begin{seriate}
+
+    \item Se aplica la operación morfológica de Black-hat seguida de inpainting para detectar y eliminar estructuras finas como el vello. Esto prepara la imagen para el análisis del melanoma sin interferencias.
+    
+    \item Se transforma la imagen de RGB a HSV para aprovechar la información de luminosidad (canal V) en la segmentación.
+    
+    \item Se realiza una umbralización del canal V utilizando el método de Otsu para obtener una máscara preliminar de la lesión.
+    
+    \item Se aplican operaciones de clausura (closing) y apertura (opening) para rellenar huecos y eliminar ruido en la máscara, respectivamente.
+    
+    \item Se identifica y selecciona la región conectada más grande, asumiendo que corresponde al melanoma, eliminando así pequeños artefactos o regiones no deseadas.
+    
+    \item Se superpone la máscara final sobre la imagen original para validar la segmentación del melanoma.
+    
+    \end{seriate}

@@ -1,0 +1,31 @@
+%LTeX: language=es
+
+El procesamiento de imágenes digitales juega un papel crucial en diversos campos, incluyendo el análisis de imágenes médicas y satelitales. Aunque los métodos de aprendizaje profundo han ganado prominencia, las técnicas tradicionales de procesamiento de imágenes, como los operadores morfológicos y espaciales, siguen siendo herramientas valiosas.
+
+Los operadores morfológicos, fundamentados en la teoría de conjuntos y la topología algebraica, demuestran una utilidad particular en el procesamiento de imágenes binarias y en escala de grises, facilitando la transformación de estructuras geométricas y topológicas en las matrices de píxeles \autocite{gonzalezDigitalImageProcessing2018}. 
+
+En contraste, los operadores espaciales se concentran en el análisis de las relaciones entre píxeles adyacentes en el dominio espacial, resultando cruciales para operaciones como la detección de discontinuidades, la atenuación de ruido estocástico y la optimización del rango dinámico. \autocite{gonzalezDigitalImageProcessing2018}
+
+En este paradigma, los operadores morfológicos y espaciales desempeñan un rol fundamental en las etapas de preprocesamiento y análisis de estas representaciones matriciales. Investigaciones empíricas extensivas han corroborado que la integración de algoritmos de preprocesamiento y posprocesamiento en un marco de inteligencia artificial puede incrementar significativamente la eficacia de los modelos computacionales en comparación con arquitecturas neuronales aisladas \autocite{salviImpactPrePostimage2021}.
+
+\paragraph{Imágenes Médicas} En el ámbito médico, los operadores morfológicos se han aplicado eficazmente para la detección de bordes y la reducción de ruido. Por ejemplo, Peng L (2020) propuso un algoritmo de gradiente morfológico mejorado combinado con momentos de Zernike para la detección de bordes subpíxel en imágenes médicas \autocite{liu2020improvement}.
+
+Los operadores espaciales, como Sobel y Canny, son ampliamente utilizados en el procesamiento de imágenes médicas. Xiao X M (2019) destacó la importancia de aplicar el operador Sobel a la detección de bordes en imágenes médicas \autocite{xiao2019application}. Qian (2019) propuso un algoritmo mejorado de detección de bordes Canny que incorpora filtrado de mediana adaptativo, operadores Sobel y el método de Otsu \autocite{qian2019medical}.\\
+
+
+
+\paragraph{Imágenes Satelitales} En el campo de las imágenes satelitales, los operadores morfológicos y espaciales también desempeñan un papel crucial. Son particularmente útiles en áreas como la estimación del cambio climático global, la detección de cambios en la cobertura terrestre, el monitoreo ambiental como parte de la gestión de desastres, el desarrollo urbano y territorial, y la seguridad, entre otros \autocite{chang2017flexible}.
+
+Los operadores espaciales, como el Sobel, se utilizan en imágenes satelitales para la detección de bordes, lo cual es fundamental en la identificación de límites entre diferentes tipos de terreno o estructuras. El operador Canny, conocido por su eficacia en la detección de bordes en presencia de ruido, se ha aplicado en el análisis de imágenes satelitales para la detección de características lineales como carreteras y ríos \autocite{abrahamEdgeDetectionSatellite2021}.
+
+Así mismo, la segmentación es fundamental para dividir las imágenes en regiones significativas. Grinias et al. desarrollaron un método de segmentación basado en campos aleatorios de Markov y clasificación no supervisada, particularmente eficaz para la detección de edificios y carreteras en áreas periurbanas \autocite{grinias2016mrf}.\\
+
+
+
+\paragraph{Industria} En la industria, los operadores morfológicos y espaciales se utilizan en aplicaciones como la inspección de calidad, la detección de defectos y la clasificación de productos. Por ejemplo, en la inspección de calidad de productos, los operadores morfológicos se utilizan para la detección de bordes y la segmentación de objetos, mientras que los operadores espaciales se utilizan para la detección de características específicas y detección de objetos  \autocite{demantPositioning2013,demantOverviewSegmentation2013,demantMarkIdentification2013}.
+
+Por otro lado, la mejora de imagen es crucial para aumentar la calidad visual y la interpretabilidad de las imágenes. Singh et al. Propusieron un marco innovador de enmascaramiento de orden fraccionario con corrección gamma ponderada de manera óptima. Este método demostró una mejora significativa en el contraste y la preservación de detalles en imágenes \autocite{singh2017novel}.
+
+La elección del operador puede impactar significativamente la velocidad y precisión del análisis, lo cual es crucial tanto en aplicaciones médicas como en el procesamiento de imágenes satelitales. En ambos campos, la integración de estas técnicas tradicionales con enfoques de aprendizaje profundo a menudo conduce a un rendimiento mejorado \autocite{asokanMachineLearningBased2019}.
+
+Este estudio se orienta a la realización de un análisis comparativo exhaustivo de diversos operadores morfológicos y espaciales, evaluando su aplicabilidad y rendimiento en múltiples escenarios de análisis de imágenes satelitales y médicas, con énfasis en la cuantificación de métricas de desempeño y eficiencia algorítmica.

@@ -1,0 +1,79 @@
+%LTeX: language=es
+
+\documentclass[floatsintext,longtable]{apa7}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{subcaption}
+% \usepackage[margin=1cm]{geometry}
+\usepackage{caption}
+\setlength{\parskip}{1em} % Adjust the value as needed
+\setlength{\parindent}{2em}
+\captionsetup[table]{name=Tabla}
+
+\addbibresource{references.bib}
+\addbibresource{references_manual.bib}
+\title{Exploración de filtros espaciales y morfológicos en escenarios reales }
+
+\authorsnames[1,1,1,1]{Andrés Vásquez-Restrepo, Carlos Alberto Francisco Aguilar Chamochumbi, Federico Ezequiel Capdeville, Miguel Ángel Osorio Sánchez}
+\authorsaffiliations{{Universidad Internacional de la Rioja}}
+\course{Visión Artificial}
+\professor{Alexandre Pérez Reina}
+\date{Enero 2025}
+\shorttitle{Artículo}
+\leftheader{Visión Artificial}
+\journal{Visión Artificial}
+\duedate{Enero 2025}
+\abstract{
+    \input{sections/abstract.tex}}
+\keywords{Filtros espaciales, Filtros morfológicos, Visión Artificial}
+\begin{document}
+\maketitle
+\section{Introducción}
+\input{sections/introduccion.tex}
+\section{Materiales y métodos}
+\begin{figure*}[t]
+    \centering
+    \begin{tabular}{ccc}
+        \subcaptionbox{\label{fig:a}}{\includegraphics[width=3cm ]{./figures/drive/abc003.jpg}} &
+        \subcaptionbox{\label{fig:b}}{\includegraphics[width=3cm ]{./figures/drive/52_right.jpeg}} &
+        \subcaptionbox{\label{fig:c}}{\includegraphics[width=3cm ]{./figures/drive/rottenPepper(93).jpg}} \\
+        \subcaptionbox{\label{fig:d}}{\includegraphics[width=3cm]{./figures/drive/parking_lot.png}} &
+        \subcaptionbox{\label{fig:e}}{\includegraphics[width=3cm]{./figures/drive/Imagen_Satelital.png}} &
+        \subcaptionbox{\label{fig:f}}{\includegraphics[width=3cm]{./figures/drive/Imagen_Medicina.jpg}} \\
+        \subcaptionbox{\label{fig:g}}{\includegraphics[width=3cm]{./figures/drive/Scr_0002.jpg}} &
+        \subcaptionbox{\label{fig:h}}{\includegraphics[width=3cm]{./figures/drive/melanoma_raw.jpg}} &
+        \subcaptionbox{\label{fig:i}}{\includegraphics[width=3cm]{./figures/drive/palmira_nir.png}} \\
+    \end{tabular}
+    \caption{Imágenes originales utilizadas en el estudio de operadores morfológicos y espaciales.
+    \subref{fig:a} Incendio Forestal \autocite{WildfireDetectionImage}.
+    \subref{fig:b} Retinopatía Diabética \autocite{DiabeticRetinopathyResized}.
+    \subref{fig:c} Inspección de Calidad en frutas \autocite{FruitVegetableDisease}
+    \subref{fig:d} Estacionamiento \autocite{pklot-raw_dataset}.
+    \subref{fig:e} Imagen Satelital de un Puerto \autocite{ShipsSatelliteImagery}.
+    \subref{fig:f} Imagen Médica de un Tumor en el Cerebro \autocite{BrainMRIImages}.
+    \subref{fig:g} Defectos de Pantalla en un celular \autocite{MobilePhoneDefect}.
+    \subref{fig:h} Imagen Médica de un Melanoma \autocite{ISICInternationalSkin}.
+    \subref{fig:i} Imagen Satelital de Palmira, Colombia en Falso Color IR  \autocite{sinergiseFalseColorInfrared}.
+    }
+    \label{fig:9x9}
+\end{figure*}
+\input{sections/metodologia.tex}
+\input{sections/figures_isoloated.tex}
+\section{Resultados y discusión}
+\input{sections/resultados.tex}
+\section{Conclusiones}
+\input{sections/conclusiones.tex}
+\newpage
+\section{Referencias}
+\printbibliography[heading=none]
+\newpage
+\end{document} 
