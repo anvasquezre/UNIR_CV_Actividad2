@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'main.blg'
-[137] biber:340> INFO - === Sun Jan 19, 2025, 23:16:31
-[156] Biber.pm:419> INFO - Reading 'main.bcf'
-[249] Biber.pm:979> INFO - Found 25 citekeys in bib section 0
-[270] Biber.pm:4419> INFO - Processing section 0
-[286] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
-[290] bibtex.pm:1713> INFO - LaTeX decoding ...
-[346] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[535] Biber.pm:4610> INFO - Looking for bibtex file 'references_manual.bib' for section 0
-[537] bibtex.pm:1713> INFO - LaTeX decoding ...
-[567] bibtex.pm:1519> INFO - Found BibTeX data source 'references_manual.bib'
-[875] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[876] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[876] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
-[909] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[927] bbl.pm:763> INFO - Output to main.bbl
-[927] Biber.pm:131> WARN - legacy month field 'jul' in entry 'pklot-raw_dataset' is not an integer - this will probably not sort properly.
-[927] Biber.pm:133> INFO - WARNINGS: 1
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[55] biber:340> INFO - === Sun Jan 19, 2025, 23:29:42
+[66] Biber.pm:419> INFO - Reading 'main.bcf'
+[118] Biber.pm:979> INFO - Found 25 citekeys in bib section 0
+[129] Biber.pm:4419> INFO - Processing section 0
+[137] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[140] bibtex.pm:1713> INFO - LaTeX decoding ...
+[164] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[252] Biber.pm:4610> INFO - Looking for bibtex file 'references_manual.bib' for section 0
+[253] bibtex.pm:1713> INFO - LaTeX decoding ...
+[268] bibtex.pm:1519> INFO - Found BibTeX data source 'references_manual.bib'
+[355] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[355] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[355] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[370] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[378] bbl.pm:763> INFO - Output to main.bbl
+[378] Biber.pm:131> WARN - legacy month field 'jul' in entry 'pklot-raw_dataset' is not an integer - this will probably not sort properly.
+[378] Biber.pm:133> INFO - WARNINGS: 1
